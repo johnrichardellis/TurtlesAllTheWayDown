@@ -1,3 +1,4 @@
+import PACKAGE_NAME.Turtles;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -51,9 +52,9 @@ public class TurtlesTest {
     }
 
     @Test
-    public void testGCD() {
+    public void testGCDa() {
         //given
-        PACKAGE_NAME.Turtles turtles = PACKAGE_NAME.Turtles.getInstance();
+        Turtles turtles = Turtles.getInstance();
         int x = 8;
         int y = 6;
         int expected = 2;
@@ -68,20 +69,61 @@ public class TurtlesTest {
 
         //then
         Assert.assertEquals(expected, actual);
+        System.out.println(timeElapsed);
     }
 
     @Test
-    public void testGCD2() {
+    public void testGCDb() {
         //given
-        PACKAGE_NAME.Turtles turtles = PACKAGE_NAME.Turtles.getInstance();
-        int x = 862;
+        Turtles turtles = Turtles.getInstance();
+        int x = 1210;
         int y = 44;
-        int expected = 2;
+        int expected = 22;
 
 
         //when
         Instant start = Instant.now();
         int actual = turtles.GCD(x, y);
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toMillis();
+
+        //then
+        Assert.assertEquals(expected, actual);
+        System.out.println(timeElapsed);
+    }
+
+    @Test
+    public void testGCD2a() {
+        //given
+        Turtles turtles = Turtles.getInstance();
+        int x = 8;
+        int y = 6;
+        int expected = 2;
+
+
+        //when
+        Instant start = Instant.now();
+        int actual = turtles.GCD2(x, y);
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toMillis();
+
+        //then
+        Assert.assertEquals(expected, actual);
+        System.out.println(timeElapsed);
+    }
+
+    @Test
+    public void testGCD2b() {
+        //given
+        Turtles turtles = Turtles.getInstance();
+        int x = 1210;
+        int y = 44;
+        int expected = 22;
+
+
+        //when
+        Instant start = Instant.now();
+        int actual = turtles.GCD2(x, y);
         Instant finish = Instant.now();
         long timeElapsed = Duration.between(start, finish).toMillis();
 
